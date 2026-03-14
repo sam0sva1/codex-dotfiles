@@ -1,0 +1,29 @@
+# Secrets
+auth.json
+
+# Volatile Codex state
+.codex-global-state.json
+.personality_migration
+history.jsonl
+session_index.jsonl
+sessions/
+log/
+shell_snapshots/
+tmp/
+memories/
+models_cache.json
+version.json
+
+# SQLite and local databases
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+sqlite/
+
+# Imported caches and nested repos
+vendor_imports/
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
