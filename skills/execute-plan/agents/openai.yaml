@@ -1,0 +1,4 @@
+interface:
+  display_name: "Execute Plan"
+  short_description: "Carry out an approved plan step by step."
+  default_prompt: "Use $execute-plan to execute the approved plan one step at a time with visible verification."

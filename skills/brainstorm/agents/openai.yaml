@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brainstorm"
+  short_description: "Compare realistic approaches before implementation."
+  default_prompt: "Use $brainstorm to compare viable approaches for this task and recommend the strongest option."

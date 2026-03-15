@@ -1,4 +1,4 @@
 interface:
   display_name: "Self Review"
-  short_description: "Fresh, unbiased review of completed implementation changes."
-  default_prompt: "Run a fresh, unbiased self-review of completed changes and report findings by severity with file:line references. Respond in Russian."
+  short_description: "Semantic and structural review of completed changes."
+  default_prompt: "Use $self-review to run a fresh review of completed changes and report issues by severity with file:line references."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Task Commit"
+  short_description: "Prepare a selective commit for the current task."
+  default_prompt: "Use $task-commit to stage only task-related files and propose a focused Conventional Commit message."

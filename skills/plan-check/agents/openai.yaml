@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Check"
+  short_description: "Critically review a plan before execution starts."
+  default_prompt: "Use $plan-check to critically review this implementation plan before any code is written."

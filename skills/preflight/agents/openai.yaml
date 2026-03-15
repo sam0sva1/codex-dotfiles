@@ -1,0 +1,4 @@
+interface:
+  display_name: "Preflight"
+  short_description: "Run the full mechanical verification before done."
+  default_prompt: "Use $preflight to discover the toolchain and run the full verification checklist for this project."

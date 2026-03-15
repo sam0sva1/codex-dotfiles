@@ -1,0 +1,4 @@
+interface:
+  display_name: "High-Level Planner"
+  short_description: "Break projects into components, phases, and MVP."
+  default_prompt: "Use $high-level-planner to break this project into components, dependencies, phases, and MVP scope."

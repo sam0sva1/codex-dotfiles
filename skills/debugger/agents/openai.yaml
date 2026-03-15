@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debugger"
+  short_description: "Reproduce bugs, test hypotheses, and isolate root cause."
+  default_prompt: "Use $debugger to reproduce this issue, test likely causes, and identify the root cause before fixing."

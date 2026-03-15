@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cross-Service Changes"
+  short_description: "Coordinate risky changes spanning multiple services."
+  default_prompt: "Use $cross-service-changes to plan contracts, compatibility, and rollout order across these services."

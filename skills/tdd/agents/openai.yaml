@@ -1,0 +1,4 @@
+interface:
+  display_name: "TDD"
+  short_description: "Drive behavior changes with RED-GREEN-REFACTOR."
+  default_prompt: "Use $tdd to implement this behavior change through a strict RED-GREEN-REFACTOR cycle."

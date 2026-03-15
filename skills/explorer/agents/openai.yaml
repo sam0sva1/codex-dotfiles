@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explorer"
+  short_description: "Survey options and challenge the premise early."
+  default_prompt: "Use $explorer to map the landscape, question assumptions, and surface open questions before deciding."

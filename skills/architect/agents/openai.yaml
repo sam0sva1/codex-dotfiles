@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architect"
+  short_description: "Analyze system impact, dependencies, and rollout order."
+  default_prompt: "Use $architect to map the architectural blast radius, dependencies, and deployment order for this change."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "API Contract First"
+  short_description: "Define and approve API contracts before coding."
+  default_prompt: "Use $api-contract-first to define and review the client-server contract before implementation."

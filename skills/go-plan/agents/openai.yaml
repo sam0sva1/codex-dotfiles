@@ -1,0 +1,4 @@
+interface:
+  display_name: "Go Plan"
+  short_description: "Build a detailed, verifiable implementation plan."
+  default_prompt: "Use $go-plan to turn the chosen approach into a detailed implementation plan with verification checkpoints."
