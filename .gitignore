@@ -1,5 +1,12 @@
 # Secrets
 auth.json
+mcp-needs-auth-cache.json
+policy-limits.json
+
+# Machine-local config and approvals
+config.toml
+rules/
+skills/.system/
 
 # Volatile Codex state
 .codex-global-state.json
@@ -7,11 +14,27 @@ auth.json
 history.jsonl
 session_index.jsonl
 sessions/
+session-env/
+plans/
+tasks/
+todos/
+telemetry/
+downloads/
+debug/
+file-history/
+paste-cache/
+plugins/
+projects/
+ide/
 log/
 shell_snapshots/
 tmp/
+.tmp/
 memories/
+cache/
+statsig/
 models_cache.json
+stats-cache.json
 version.json
 
 # SQLite and local databases

@@ -1,7 +1,0 @@
-model = "gpt-5.4"
-model_reasoning_effort = "xhigh"
-[projects."/Users/k.novosad/WORK/cxs"]
-trust_level = "trusted"
-
-[projects."/Users/k.novosad/.codex"]
-trust_level = "trusted"
