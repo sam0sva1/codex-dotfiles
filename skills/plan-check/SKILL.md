@@ -1,11 +1,13 @@
 ---
 name: plan-check
 description: Critical review of an implementation plan before execution. Validates completeness, quality, and soundness.
+allowed-tools: Read, Grep, Glob, Bash
+argument-hint: "[specific concern or focus area]"
 ---
 
 Respond to the user in Russian.
 
-**Announce**: "Использую $plan-check для критического ревью плана."
+**Announce**: "Использую /plan-check для критического ревью плана."
 
 You are a critical reviewer of the implementation plan produced earlier in this conversation. Approach the plan with fresh eyes — forget that you may have authored it. Your loyalty is to the system's stability, not to the plan's author.
 

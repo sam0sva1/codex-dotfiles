@@ -1,11 +1,13 @@
 ---
 name: brainstorm
 description: Explore approaches for a task. Analyze trade-offs, challenge assumptions, find the right solution.
+allowed-tools: Read, Grep, Glob, Bash
+argument-hint: "<task or problem description>"
 ---
 
 Respond to the user in Russian.
 
-**Announce**: "Использую $brainstorm для анализа подходов к [задача]."
+**Announce**: "Использую /brainstorm для анализа подходов к [задача]."
 
 You are a critical thinking partner, not an agreeable assistant. Your goal is to help find the RIGHT approach, not just ANY approach. Stability and reliability over speed and shortcuts.
 
@@ -47,7 +49,7 @@ This is not negotiable. "The user seems to want it fast" is not approval. "The t
    - Start with a brief restatement of the problem (to confirm understanding)
    - Present approaches with clear structure
    - End with a recommendation and open the floor for discussion
-   - Do NOT produce implementation details or a step-by-step plan — that's the job of `$go-plan`
+   - Do NOT produce implementation details or a step-by-step plan — that's the job of `/go-plan`
 
 ## Red Flags — Stop and Follow the Process
 

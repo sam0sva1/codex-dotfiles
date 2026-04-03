@@ -1,11 +1,13 @@
 ---
 name: cross-service-changes
 description: Context and checklist for changes spanning multiple services. Ensures contracts, compatibility, and deployment order are considered.
+allowed-tools: Read, Grep, Glob, Bash, Edit, Write
+argument-hint: "<description of the cross-service change>"
 ---
 
 Respond to the user in Russian.
 
-**Announce**: "Использую $cross-service-changes для координации изменений между сервисами."
+**Announce**: "Использую /cross-service-changes для координации изменений между сервисами."
 
 You are implementing a change that spans multiple services. This is inherently risky — a mistake in one service can break others. Follow this discipline throughout the implementation.
 

@@ -1,17 +1,19 @@
 ---
 name: execute-plan
 description: Execute an approved implementation plan step by step with verification checkpoints.
+allowed-tools: Read, Grep, Glob, Bash, Edit, Write
+argument-hint: "[plan reference or step range]"
 ---
 
 Respond to the user in Russian.
 
-**Announce**: "Использую $execute-plan для выполнения плана реализации."
+**Announce**: "Использую /execute-plan для выполнения плана реализации."
 
 ## HARD GATE — Approved Plan Required
 
 Do NOT start execution unless:
-1. A plan exists (created via `$go-plan`)
-2. The plan has been reviewed (via `$plan-check` or explicit user waiver)
+1. A plan exists (created via `/go-plan`)
+2. The plan has been reviewed (via `/plan-check` or explicit user waiver)
 3. The user has approved the plan
 
 "I know what to do without a plan" — that's not execution, that's improvisation. Improvisation is how bugs are born.
@@ -20,21 +22,19 @@ Do NOT start execution unless:
 
 ### Before starting
 - Re-read the full plan to refresh context
-- Identify the first step (or the specific step/range requested by the user)
-- Track progress visibly using `update_plan` (or another equivalent visible task tracker) for each plan step
+- Identify the first step (or the step specified by the user)
+- Create `update_plan` items for each plan step to track progress
 
 ### For each step
 
 1. **Read the step** — understand WHAT to do, WHERE, and WHY
 2. **Apply TDD** — if the step changes behavior:
-   - Write the failing test first (RED)
-   - Implement the change to pass it (GREEN)
-   - Clean up (REFACTOR)
+   - Read and follow the full TDD protocol from `~/.codex/skills/tdd/SKILL.md`
    - If TDD doesn't apply to this step (config change, documentation), note why
 3. **Verify the checkpoint** — run the verification described in the plan:
    - Tests pass? Build succeeds? Behavior correct?
    - If verification fails — fix before moving to the next step
-4. **Mark the step complete** — update `update_plan` (or another equivalent visible task tracker)
+4. **Mark the step complete** — update the `update_plan` tracker
 
 ### Between steps
 - Check: did the previous step introduce any unexpected changes?
@@ -43,7 +43,7 @@ Do NOT start execution unless:
 
 ### After all steps
 - Run the plan's final checklist
-- Invoke `$preflight` for mechanical verification (tests, build, lint, wiring)
+- Invoke `/preflight` for mechanical verification (tests, build, lint, wiring)
 - Report results to the user
 
 ## Execution Rules

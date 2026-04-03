@@ -1,11 +1,13 @@
 ---
 name: api-contract-first
 description: API-first approach for client-server development. Define the contract before implementing either side.
+allowed-tools: Read, Grep, Glob, Bash, Edit, Write
+argument-hint: "<feature requiring client-server coordination>"
 ---
 
 Respond to the user in Russian.
 
-**Announce**: "Использую $api-contract-first для разработки контракта [фича]."
+**Announce**: "Использую /api-contract-first для разработки контракта [фича]."
 
 You are implementing a feature that spans client and server. Follow the contract-first approach: define the interface before building either side.
 

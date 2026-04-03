@@ -1,22 +1,24 @@
 ---
 name: go-plan
 description: Create a detailed, verifiable implementation plan for an agreed-upon approach.
+allowed-tools: Read, Grep, Glob, Bash
+argument-hint: "<agreed approach or feature to implement>"
 ---
 
 Respond to the user in Russian.
 
-**Announce**: "Использую $go-plan для создания плана реализации [фича/подход]."
+**Announce**: "Использую /go-plan для создания плана реализации [фича/подход]."
 
-You are creating a detailed implementation plan. The approach should already be decided (via `$brainstorm` or direct instruction). If the approach is unclear or seems questionable, ask before planning.
+You are creating a detailed implementation plan. The approach should already be decided (via `/brainstorm` or direct instruction). If the approach is unclear or seems questionable, ask before planning.
 
-**Important**: Present the full plan explicitly and wait for user approval before any implementation begins.
+**Important**: Use Codex's planning workflow (`update_plan`) to present the plan and wait for user approval before any implementation begins.
 
 ## HARD GATE — No Code Without Approved Plan
 
 Do NOT write any implementation code until:
 1. The plan is presented in full
 2. The user has explicitly approved it
-3. `$plan-check` has been run (or the user explicitly waived it)
+3. `/plan-check` has been run (or the user explicitly waived it)
 
 If you find yourself wanting to "just start coding" — that's the signal to slow down, not speed up.
 

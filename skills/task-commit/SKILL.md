@@ -1,15 +1,17 @@
 ---
 name: task-commit
 description: Selective commit of only the files changed in the current task. Use after self-review.
+allowed-tools: Read, Grep, Glob, Bash
+argument-hint: "[file list or description of what was changed]"
 ---
 
 Respond to the user in Russian. Commit message must be in English.
 
-**Announce**: "Использую $task-commit для селективного коммита файлов текущей задачи."
+**Announce**: "Использую /task-commit для селективного коммита файлов текущей задачи."
 
 ## HARD GATE — Review Before Commit
 
-Before committing, confirm that `$self-review` has been run on the changes. If not — run it first. Committing unreviewed code is shipping bugs intentionally.
+Before committing, confirm that `/self-review` has been run on the changes. If not — run it first. Committing unreviewed code is shipping bugs intentionally.
 
 ## Instructions
 

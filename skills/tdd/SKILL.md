@@ -1,11 +1,13 @@
 ---
 name: tdd
 description: Test-Driven Development — RED-GREEN-REFACTOR cycle for every behavior change. Use during implementation.
+allowed-tools: Read, Grep, Glob, Bash, Edit, Write
+argument-hint: "<feature or behavior to implement>"
 ---
 
 Respond to the user in Russian.
 
-**Announce**: "Использую $tdd для реализации [фича/поведение] через RED-GREEN-REFACTOR."
+**Announce**: "Использую /tdd для реализации [фича/поведение] через RED-GREEN-REFACTOR."
 
 ## The Iron Law
 
@@ -13,11 +15,13 @@ Respond to the user in Russian.
 
 This is not a suggestion. This is not "best practice when time allows." This is the mandatory process for every behavior change. New features, bug fixes, refactoring that changes behavior — all of them go through RED-GREEN-REFACTOR.
 
-## HARD GATE — Write Code Before Test? Delete It. Start Over.
+## HARD GATE — Tests First for New Code. Tests Always for Existing Code.
 
-If you find yourself having written production code before the test — delete the production code. Not "keep it and backfill the test." DELETE it. Write the test first. Then write fresh production code to pass it.
+**New code**: Always write the test FIRST, then write the production code to pass it. The test forces you to understand WHAT the code should do before deciding HOW.
 
-This feels wasteful. It is not. Code written without a test is code you don't understand yet. The test forces you to understand WHAT the code should do before deciding HOW.
+**Existing code** (already written, being modified or extended): Do NOT delete working code just to rewrite it test-first. Instead, cover the existing behavior with tests BEFORE making changes — then proceed with RED-GREEN-REFACTOR for the new behavior.
+
+The goal is safety, not ritual. Tests-first for new code prevents bugs at the source. Tests-for-existing-code prevents regressions during changes.
 
 ## The Cycle
 
@@ -60,14 +64,14 @@ If in doubt — use TDD. The cost of an unnecessary test is low. The cost of a m
 
 ## Anti-Patterns to Avoid
 
-- **Test after code**: Tests written after implementation verify "what the code does", not "what the code should do." They encode bugs as features
+- **Test after code (for new code)**: Tests written after new implementation verify "what the code does", not "what the code should do." For new code, always write the test first. For existing code being modified, cover the existing behavior with tests before changing it
 - **Testing implementation details**: Test behavior (inputs → outputs), not internal methods. If you refactor and tests break but behavior is the same — your tests are testing the wrong thing
 - **Mock everything**: Mocks are for external boundaries (APIs, databases, file systems). Mocking internal collaborators creates brittle tests that break on every refactor
 - **One giant test**: Each test should verify ONE behavior. If a test name needs "and" — split it
 
 ## Red Flags — Stop and Follow the Process
 
-- "Let me write the implementation first, then add tests" → DELETE the implementation. Start with the test. No exceptions
+- "Let me write the implementation first, then add tests" → For new code: stop, write the test first. For existing code: cover it with tests before changing
 - "This function is too simple to test" → Simple functions with wrong behavior cause complex bugs. Test it
 - "I'll write all the tests at the end" → That's not TDD. That's test-after. The test must DRIVE the implementation
 - "The test is hard to write, I'll skip it" → Hard-to-test code is poorly designed code. The difficulty is the signal to redesign

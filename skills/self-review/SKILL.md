@@ -1,15 +1,17 @@
 ---
 name: self-review
-description: Semantic and structural review of completed implementation. Use after finishing a feature and before commit.
+description: Semantic review of completed implementation — does the code solve the right problem the right way?
+allowed-tools: Read, Grep, Glob, Bash
+argument-hint: "[scope or focus area]"
 ---
 
 Respond to the user in Russian.
 
-**Announce**: "Использую $self-review для семантического ревью реализации [что именно]."
+**Announce**: "Использую /self-review для семантического ревью реализации [что именно]."
 
 You are doing a fresh, unbiased self-review of your own implementation. Forget any prior context, assumptions, or decisions — approach the code as if you're seeing it for the first time.
 
-This is NOT a mechanical check (tests pass, build works) — that's `$preflight`'s job. This is a SEMANTIC review: does the code solve the right problem? Does the approach match the agreed design? Did the intent survive the journey from plan to code?
+This is NOT a mechanical check (tests pass, build works) — that's `/preflight`'s job. This is a SEMANTIC review: does the code solve the right problem? Does the approach match the agreed design? Did the intent survive the journey from plan to code?
 
 ## HARD GATE — Fresh Eyes Required
 
@@ -19,9 +21,9 @@ Before starting the review, mentally reset. The fact that you wrote the code is 
 
 ## Instructions
 
-1. **Gather changes**: Run `git diff main...HEAD` (or `git diff --cached`, or `git diff` — whichever shows the relevant changes). If the user provided a specific scope or focus area, review that area extra carefully.
+1. **Gather changes**: Run `git diff main...HEAD` (or `git diff --cached`, or `git diff` — whichever shows the relevant changes). If the user provided a specific scope or focus area, pay extra attention to that area.
 
-2. **Analyze ALL changes thoroughly** - semantic issues first, then structural integrity:
+2. **Semantic analysis** — the core of this review:
 
    **Intent preservation**:
    - Re-read the original task description. Does the implementation actually solve THAT problem?
@@ -37,19 +39,10 @@ Before starting the review, mentally reset. The fact that you wrote the code is 
    - Is the logic fully implemented? Nothing left as TODO, stub, or half-done?
    - Are there missing edge cases, error paths, or boundary conditions?
 
-   **Connectivity**:
-   - Is all created code actually wired up and used? No dangling classes, methods, or variables?
-   - Are all imports, registrations, and dependency injections in place?
-   - No orphaned files or dead code introduced?
-
    **Correctness**:
    - Bugs, logic errors, off-by-one mistakes, race conditions?
    - Security issues (injection, auth, data leaks)?
    - Consistency with existing codebase patterns and conventions?
-
-   **Documentation**:
-   - Is documentation affected by the changes updated and accurate?
-   - Do comments, docstrings, READMEs, and prompts reflect the current state?
 
    **Hidden problems**:
    - What will break if requirements change slightly?

@@ -1,13 +1,15 @@
 ---
 name: preflight
 description: Mechanical verification that the project builds, tests pass, and nothing is broken. Use before merge, PR, or declaring work complete.
+allowed-tools: Read, Grep, Glob, Bash
+argument-hint: "[scope or specific concerns]"
 ---
 
 Respond to the user in Russian.
 
-**Announce**: "Использую $preflight для механической проверки проекта."
+**Announce**: "Использую /preflight для механической проверки проекта."
 
-Preflight — это проверка "можно ли лететь?" Не "туда ли летим?" (это `$self-review`), а "всё ли работает, собирается, проходит."
+Preflight — это проверка "можно ли лететь?" Не "туда ли летим?" (это `/self-review`), а "всё ли работает, собирается, проходит."
 
 ## Phase 0 — Discover the Toolchain
 
